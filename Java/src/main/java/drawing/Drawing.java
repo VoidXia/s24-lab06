@@ -30,10 +30,12 @@ public class Drawing {
      */
     public void draw(String format, String filename) {
         // TODO: Do you notice any issues here?
+        // abstract the creation of writer with createWriter(format, filename)
         if (format.equals("jpeg")) {
             try (Writer writer = new JPEGWriter(filename + ".jpeg")) {
                 for (Shape shape : this.shapes) {
                     // TODO: What is the issue of the behavior here?
+                    // this should be encapsulate into the func of shape.draw(writer)
                     Line[] lines = shape.toLines();
                     shape.draw(writer, lines);
                 }

@@ -16,13 +16,12 @@ public class Frogger {
     private int position;
     
     // Field for task 2. Anything to add/change?
-    private final Records records;
-    private String firstName, lastName, phoneNumber, zipCode, state, gender;
+    private final FroggerID id;
 
-    public Frogger(Road road, int position, Records records) {
+    public Frogger(Road road, int position, FroggerID id) {
         this.road = road;
         this.position = position;
-        this.records = records;
+        this.id = id;
     }
 
     /**
@@ -40,7 +39,6 @@ public class Frogger {
         return true;
     }
 
-    // TODO: Do you notice any issues here?
     public boolean isOccupied(int position) {
         return this.road.isOccupied(position);
     }
@@ -55,8 +53,8 @@ public class Frogger {
      * 
      * @return true if record successful, else false.
      */
-    public boolean recordMyself() {
-      boolean success = records.addRecord(firstName, lastName, phoneNumber, zipCode, state, gender);
+    public boolean recordMyself(Records records) {
+      boolean success = records.addRecord(id);
       return success;
     }
 

@@ -7,6 +7,10 @@ package frogger;
  */
 public class Frogger {
 
+    // The Frogger.java class represents the Frogger game. It has fields for the road, Frogger's position, and records. The move method allows Frogger to move forward or backward on the road based on the provided boolean parameter. The isOccupied method checks if a specific position on the road is occupied, and the isValid method checks if a position is within the valid range of the road.
+
+    // The anti-pattern present in the code is that the Frogger class has fields and methods related to recording personal information (firstName, lastName, phoneNumber, zipCode, state, gender), which seems unrelated to the purpose of the Frogger game.
+
     // Field for task 1.
     private final Road road;
     private int position;
@@ -15,17 +19,10 @@ public class Frogger {
     private final Records records;
     private String firstName, lastName, phoneNumber, zipCode, state, gender;
 
-    public Frogger(Road road, int position, Records records, String firstName, String lastName, String phoneNumber,
-    String zipCode, String state, String gender) {
+    public Frogger(Road road, int position, Records records) {
         this.road = road;
         this.position = position;
         this.records = records;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.zipCode = zipCode;
-        this.state = state;
-        this.gender = gender;
     }
 
     /**
